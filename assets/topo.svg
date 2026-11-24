@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="Olá, sou Daniel Ribeiro. Desenvolvedor Front-end e UI/UX Designer. Building Nexa.">
+  <defs>
+    <clipPath id="cartao"><rect width="1200" height="420" rx="28"/></clipPath>
+    <!-- Fundo líquido roxo, no mesmo estilo do topo da página da Nexa -->
+    <!-- Faixas de cor torcidas por um ruído que se mexe devagar: dá o efeito de mármore líquido -->
+    <filter id="liquido" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.0032 0.0052" numOctaves="3" seed="23" result="ruido">
+        <animate attributeName="baseFrequency" dur="30s" values="0.0032 0.0052;0.0046 0.0036;0.0032 0.0052" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="ruido" scale="340" xChannelSelector="R" yChannelSelector="B" result="mexido"/>
+      <feGaussianBlur in="mexido" stdDeviation="2.5"/>
+    </filter>
+    <linearGradient id="faixas" x1="0" y1="0" x2="1200" y2="420" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
+      <stop offset="0" stop-color="#0B0618"/>
+      <stop offset=".12" stop-color="#2A1052"/>
+      <stop offset=".22" stop-color="#9D4EDD"/>
+      <stop offset=".28" stop-color="#F3DDFF"/>
+      <stop offset=".34" stop-color="#9D4EDD"/>
+      <stop offset=".46" stop-color="#1A0B33"/>
+      <stop offset=".56" stop-color="#6B2FB3"/>
+      <stop offset=".64" stop-color="#D896FF"/>
+      <stop offset=".7" stop-color="#6B2FB3"/>
+      <stop offset=".82" stop-color="#0E0720"/>
+      <stop offset=".92" stop-color="#7A3BC9"/>
+      <stop offset="1" stop-color="#2A1052"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;-420 -150;0 0" dur="34s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="grao" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0"/>
+    </filter>
+    <radialGradient id="sombra" cx="50%" cy="46%" r="58%">
+      <stop offset="0" stop-color="#07060E" stop-opacity=".66"/>
+      <stop offset=".62" stop-color="#07060E" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#07060E" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nome" x1="0" y1="0" x2="1" y2="0">
+      <stop offset=".1" stop-color="#FFFFFF"/>
+      <stop offset=".6" stop-color="#F1DCFF"/>
+      <stop offset="1" stop-color="#D896FF"/>
+    </linearGradient>
+    <linearGradient id="borda" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"/>
+      <stop offset=".3" stop-color="#D896FF" stop-opacity=".35"/>
+      <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#D896FF" stop-opacity=".6"/>
+    </linearGradient>
+    <radialGradient id="bola" cx="35%" cy="28%" r="75%">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D6D6E2"/>
+    </radialGradient>
+    <linearGradient id="pilula" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#15151D"/>
+      <stop offset="1" stop-color="#08080C"/>
+    </linearGradient>
+    <style>
+      .t { font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      .entra { opacity: 0; animation: entra 1.2s cubic-bezier(.23, 1, .32, 1) forwards; }
+      .d1 { animation-delay: .15s; } .d2 { animation-delay: .35s; } .d3 { animation-delay: .55s; } .d4 { animation-delay: .75s; }
+      @keyframes entra { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+      .ponto { animation: pisca 2.4s ease-in-out infinite; }
+      @keyframes pisca { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+      .seta { animation: anda 2.2s cubic-bezier(.23, 1, .32, 1) infinite; }
+      @keyframes anda { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
+      @media (prefers-reduced-motion: reduce) { .entra { animation: none; opacity: 1; } .ponto, .seta { animation: none; } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#cartao)">
+    <rect width="1200" height="420" fill="#120A22"/>
+    <rect x="-220" y="-220" width="1640" height="860" fill="url(#faixas)" filter="url(#liquido)"/>
+    <rect width="1200" height="420" fill="url(#sombra)"/>
+    <rect width="1200" height="420" filter="url(#grao)" opacity=".22" style="mix-blend-mode: overlay"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="419" rx="27.5" fill="none" stroke="#FFFFFF" stroke-opacity=".08"/>
+
+  <!-- Selo -->
+  <g class="entra d1">
+    <rect x="428" y="72" width="344" height="38" rx="19" fill="#0A0812" fill-opacity=".55" stroke="#FFFFFF" stroke-opacity=".14"/>
+    <circle class="ponto" cx="452" cy="91" r="4" fill="#D896FF"/>
+    <circle cx="452" cy="91" r="9" fill="#D896FF" opacity=".25"/>
+    <text class="t" x="610" y="96.5" text-anchor="middle" font-size="15" font-weight="500" fill="#FFFFFF" fill-opacity=".88">Front-end · UI/UX · Building Nexa</text>
+  </g>
+
+  <!-- Título -->
+  <text class="t entra d2" x="600" y="202" text-anchor="middle" font-size="66" font-weight="300" letter-spacing="-2.4" fill="#FFFFFF">Olá, sou <tspan font-weight="600" fill="url(#nome)">Daniel Ribeiro</tspan></text>
+  <text class="t entra d3" x="600" y="250" text-anchor="middle" font-size="21" fill="#FFFFFF" fill-opacity=".78">Desenvolvedor Front-end &amp; UI/UX Designer</text>
+
+  <!-- Botão em pílula, igual ao da página -->
+  <g class="entra d4">
+    <rect x="481" y="296" width="238" height="58" rx="29" fill="url(#pilula)"/>
+    <rect x="480.25" y="295.25" width="239.5" height="59.5" rx="29.75" fill="none" stroke="url(#borda)" stroke-width="1.5"/>
+    <text class="t" x="507" y="331" font-size="17" font-weight="500" fill="#FFFFFF">Conheça a Nexa</text>
+    <circle cx="689" cy="325" r="22" fill="url(#bola)"/>
+    <g class="seta"><path d="M680 325h17M691 318l7 7-7 7" fill="none" stroke="#0A0A0F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+</svg>

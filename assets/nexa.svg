@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="NEXA · ERP cognitivo com IA">
+  <defs>
+    <clipPath id="cartao"><rect width="1200" height="320" rx="28"/></clipPath>
+    <radialGradient id="luz1" cx="18%" cy="0%" r="70%"><stop offset="0" stop-color="#9D4EDD" stop-opacity=".45"/><stop offset="1" stop-color="#9D4EDD" stop-opacity="0"/></radialGradient>
+    <radialGradient id="luz2" cx="88%" cy="100%" r="60%"><stop offset="0" stop-color="#D896FF" stop-opacity=".22"/><stop offset="1" stop-color="#D896FF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="luzMeio" cx="50%" cy="44%" r="38%"><stop offset="0" stop-color="#9D4EDD" stop-opacity=".22"/><stop offset="1" stop-color="#9D4EDD" stop-opacity="0"/></radialGradient>
+    <filter id="grao" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0"/>
+    </filter>
+    <!-- Letras: branco para cinza, com o brilho roxo do logo do sistema -->
+    <linearGradient id="letra" x1="0" y1="0" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#A0A0A0"/>
+    </linearGradient>
+    <filter id="brilhoLetras" x="-40%" y="-80%" width="180%" height="260%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b1"/>
+      <feFlood flood-color="#9D4EDD" flood-opacity=".9"/><feComposite in2="b1" operator="in" result="g1"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="17" result="b2"/>
+      <feFlood flood-color="#9D4EDD" flood-opacity=".4"/><feComposite in2="b2" operator="in" result="g2"/>
+      <feMerge><feMergeNode in="g2"/><feMergeNode in="g1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="brilhoX" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="b1"/>
+      <feFlood flood-color="#D896FF"/><feComposite in2="b1" operator="in" result="g1"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="13" result="b2"/>
+      <feFlood flood-color="#9D4EDD"/><feComposite in2="b2" operator="in" result="g2"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="22" result="b3"/>
+      <feFlood flood-color="#9D4EDD" flood-opacity=".8"/><feComposite in2="b3" operator="in" result="g3"/>
+      <feMerge><feMergeNode in="g3"/><feMergeNode in="g2"/><feMergeNode in="g1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="brilhoAnel" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Anéis do X: branco de um lado, lilás do outro (como no sistema) -->
+    <linearGradient id="anelFrente" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".42" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#D896FF"/><stop offset="1" stop-color="#D896FF"/>
+    </linearGradient>
+    <linearGradient id="anelTras" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset=".42" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#9D4EDD"/><stop offset="1" stop-color="#9D4EDD"/>
+    </linearGradient>
+    <style>
+      .t { font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      .respira { transform-box: fill-box; transform-origin: center; animation: respira 3s ease-in-out infinite; }
+      @keyframes respira { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+      .luzX { animation: luzX 3s ease-in-out infinite; }
+      @keyframes luzX { 0%, 100% { opacity: .85; } 50% { opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) { .respira, .luzX { animation: none; } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#cartao)">
+    <rect width="1200" height="320" fill="#0C0C12"/>
+    <rect width="1200" height="320" fill="url(#luz1)"/>
+    <rect width="1200" height="320" fill="url(#luz2)"/>
+    <rect width="1200" height="320" fill="url(#luzMeio)"/>
+    <rect width="1200" height="320" filter="url(#grao)" opacity=".14" style="mix-blend-mode: overlay"/>
+  </g>
+  <rect x=".5" y=".5" width="1199" height="319" rx="27.5" fill="none" stroke="#D8BEFF" stroke-opacity=".16"/>
+
+  <!-- NEXA (letras desenhadas no formato do logo: altura 100, largura 405) -->
+  <g transform="translate(397.5 72)">
+    <!-- anel de trás, atrás do X -->
+    <g transform="translate(244 50) rotate(-15.9)" filter="url(#brilhoAnel)" style="mix-blend-mode: screen">
+      <ellipse rx="29.5" ry="89" fill="none" stroke="url(#anelTras)" stroke-width="9" stroke-linecap="round" pathLength="360" stroke-dasharray="173 187">
+        <animate attributeName="stroke-dashoffset" values="0;360" dur="3s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    <g filter="url(#brilhoLetras)" fill="url(#letra)">
+      <path d="M0 100V0h23l42 66.7V0h21v100H63L21 33.3V100z"/>
+      <path transform="translate(108 0)" d="M0 0h68v18H21v23h42v18H21v23h48v18H0z"/>
+      <path transform="translate(311 0)" fill-rule="evenodd" d="M0 100 33 0h28l33 100H71l-7-22H30l-7 22zM36 60h22L47 24z"/>
+    </g>
+    <g class="luzX" filter="url(#brilhoX)" transform="translate(199 0)">
+      <path class="respira" fill="#FFFFFF" d="M0 0h25l20 30.8L65 0h25L57.5 50 90 100H65L45 69.2 25 100H0l32.5-50z"/>
+    </g>
+    <!-- anel da frente, por cima do X -->
+    <g transform="translate(244 50) rotate(15.9)" filter="url(#brilhoAnel)" style="mix-blend-mode: screen">
+      <ellipse rx="89" ry="29.5" fill="none" stroke="url(#anelFrente)" stroke-width="9" stroke-linecap="round" pathLength="360" stroke-dasharray="173 187">
+        <animate attributeName="stroke-dashoffset" values="0;-360" dur="2.5s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+  </g>
+
+  <text class="t" x="600" y="236" text-anchor="middle" font-size="24" font-weight="300" letter-spacing="-.4" fill="#EEF0F6">ERP cognitivo com IA</text>
+  <text class="t" x="600" y="268" text-anchor="middle" font-size="15.5" fill="#A4A9B8">Estoque, pedidos, produção e equipe juntos, conectando a fábrica às lojas</text>
+</svg>
